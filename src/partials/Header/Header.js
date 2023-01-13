@@ -14,7 +14,7 @@ const Header = () => {
     const { classes } = useStyles()
 
     return (
-        <Box >
+        <Box>
             <AppBar>
                 <Toolbar>
                     <IconButton>
