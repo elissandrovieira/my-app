@@ -12,8 +12,8 @@ import Customers from './pages/Customers'
 
 const App = () => {
   return (
-    <TemplateDefault>
-      <Router>
+    <Router>
+      <TemplateDefault>
         <Routes>
           <Route path="/" element={
               <TemplatePage
@@ -30,8 +30,8 @@ const App = () => {
             }
           />
         </Routes>
-      </Router>
-  </TemplateDefault>
+      </TemplateDefault>
+    </Router>
   )
 }
 
