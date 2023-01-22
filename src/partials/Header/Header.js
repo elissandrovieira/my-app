@@ -16,6 +16,7 @@ import {
     Menu as MenuIcon,
     Home as HomeIcon,
     PersonAdd as PersonAddIcon,
+    Group as GroupIcon,
 } from '@mui/icons-material'
 
 import useStyles from './Header.style'
@@ -56,6 +57,12 @@ const Header = () => {
                         <ListItemText>Homepage</ListItemText>
                     </ListItemButton>
                     <ListItemButton onClick={() => navigateMenu('/customers')}>
+                        <ListItemIcon>
+                            <GroupIcon />
+                        </ListItemIcon>
+                        <ListItemText>Customers list</ListItemText>
+                    </ListItemButton>
+                    <ListItemButton onClick={() => navigateMenu('/customers/add')}>
                         <ListItemIcon>
                             <PersonAddIcon />
                         </ListItemIcon>
