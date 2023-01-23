@@ -2,9 +2,6 @@ import Container from '@mui/material/Container'
 import { makeStyles } from 'tss-react/mui'
 import { Outlet } from 'react-router-dom'
 
-import Header from '../partials/Header/Header'
-import useAuth from '../state/auth'
-
 const useStyles = makeStyles() (() => {
     return {
         container: {
@@ -13,16 +10,11 @@ const useStyles = makeStyles() (() => {
     }
 })
 
-const Default = () => {
+const Clean = () => {
     const { classes } = useStyles()
-    
-    const { user } = useAuth()
-
-    console.log(user)
 
     return(
         <>
-            <Header user={user} />
             <Container className={classes.container}>
                 <Outlet />
             </Container>
@@ -30,4 +22,4 @@ const Default = () => {
     )
 }
 
-export default Default
+export default Clean

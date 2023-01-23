@@ -21,7 +21,7 @@ import {
 
 import useStyles from './Header.style'
 
-const Header = () => {
+const Header = ({ user }) => {
     const { classes } = useStyles()
 
     const [menuOpen, setMenuOpen] = useState(false)
@@ -35,6 +35,8 @@ const Header = () => {
         handleToggleMenu()
     }
 
+    
+
     return (
         <>
             <AppBar>
@@ -42,10 +44,13 @@ const Header = () => {
                     <IconButton onClick={() => handleToggleMenu()}>
                         <MenuIcon />
                     </IconButton>
-                    <Typography className={classes.title}>
-                        News
-                    </Typography>
-                    <Button className={classes.login}>Login</Button>
+                    <Typography className={classes.title}>My App</Typography>
+                    
+                    {
+                        user.logged
+                        ? <Button className={classes.login}>{ user.email }</Button>
+                        :<Button className={classes.login}>Login</Button>
+                    }
                 </Toolbar>
             </AppBar>
             <Drawer open={menuOpen} onClose={() => handleToggleMenu()}>
